@@ -33,7 +33,7 @@ export default async function handler(
                 if(data.dob === password){
                     res.status(200).json(data);
                 }else{
-                    res.status(401).json({
+                    res.status(201).json({
                         "message":"wrong password"
                     })
                 }
