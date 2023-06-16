@@ -20,14 +20,12 @@ export default async function handler(
             console.log(e)
         }
     } else if (method === 'POST') {
-        console.log("hello")
         // const cosmosClient = new UserCosmosClient()
         try {
-
             const user = User.CreateNew(req.body)
-            console.log(user)
+            // console.log(user)
             await cosmosClient.createOrUpdateUser(user)
-            res.status(200).send(user)
+            res.status(200).json(user)
         } catch (e) {
             //need to update as per the api
             // eslint-disable-next-line no-console

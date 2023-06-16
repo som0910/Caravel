@@ -4,7 +4,6 @@ import { appCosmosClient } from './AppCosmosClient'
 export default class BaseCosmosClient<TEntity> {
   protected databaseId = process.env.DATABASE_NAME as string
   protected containerName = ''
-
   protected client: CosmosClient
   protected c: new (initialState?: TEntity) => TEntity
 

@@ -4,8 +4,12 @@ import { v4 as uuidv4 } from 'uuid'
 
 export default class User {
   public id: string | unknown
-  public name: string | unknown
-  public email: string | unknown
+  public dob: string | unknown
+  public firstName: string | unknown
+  public lastName: string | unknown
+  public middleName: string | unknown
+  public gender: string | unknown
+
 
   constructor(initialState?: Partial<User>) {
     makeAutoObservable(this)
@@ -15,10 +19,13 @@ export default class User {
   }
 
   public static CreateNew(initialValues?: Partial<User>): User {
+    console.log(initialValues);
     const user = new User()
     user.id = uuidv4().toString()
-    user.name = initialValues?.name
-    user.email = initialValues?.email
+    user.firstName = initialValues?.firstName
+    user.lastName = initialValues?.lastName
+    user.middleName = initialValues?.lastName
+    user.dob = initialValues?.dob
     if (initialValues) {
       assign(user, initialValues)
     }

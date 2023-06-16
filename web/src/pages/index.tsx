@@ -8,10 +8,7 @@ function Index() {
     const store = useContext(StoreContext)
 
     return (
-        <AppShell>
-            <Container maxWidth="lg" style={{ marginTop: '40px' }}>
-                <Typography variant="h3" color="textPrimary" align="center">
-                    {TextConstants.Title}
+        <AppShell><Container maxWidth="lg" style={{ marginTop: '40px' }}><Typography variant="h3" color="textPrimary" align="center">{TextConstants.Title}
                 </Typography>
                 <Typography
                     variant="h5"
